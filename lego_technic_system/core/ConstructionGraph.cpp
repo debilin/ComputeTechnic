@@ -7,7 +7,7 @@
 #include "ConstructionGraph.h"
 #include "util/util.h"
 #include "configure/global_variables.h"
-#include "IO/DataWriter.h"
+#include "io/DataWriter.h"
 #include "connector/BeamLayoutConnectorGenerator.h"
 
 using std::cout;

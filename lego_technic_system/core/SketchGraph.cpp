@@ -11,7 +11,7 @@
 #include <map>
 #include "LayerGraph.h"
 #include "objectives/Grader.h"
-#include "IO/DataWriter.h"
+#include "io/DataWriter.h"
 #include <ctime>
 #include "configure/Constants.h"
 

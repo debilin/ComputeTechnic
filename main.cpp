@@ -5,7 +5,7 @@
 #include <fstream>
 #include <connector/BeamLayoutConnectorGenerator.h>
 #include <util/Timer.h>
-#include <IO/DataWriter.h>
+#include <io/DataWriter.h>
 #include "core/LEGOGenerator.h"
 
 using std::vector;

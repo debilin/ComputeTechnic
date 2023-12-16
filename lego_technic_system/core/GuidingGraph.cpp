@@ -4,7 +4,7 @@
 
 #include <configure/global_variables.h>
 #include "GuidingGraph.h"
-#include "IO/DataWriter.h"
+#include "io/DataWriter.h"
 #include "util/util.h"
 #include "util/MyAssert.h"
 

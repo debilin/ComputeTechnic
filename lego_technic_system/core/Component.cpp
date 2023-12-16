@@ -7,7 +7,7 @@
 #include "Component.h"
 #include "configure/global_variables.h"
 #include "util/util.h"
-#include "IO/DataWriter.h"
+#include "io/DataWriter.h"
 #include "BeamLayout.h"
 #include "util/Timer.h"
 #include <fstream>

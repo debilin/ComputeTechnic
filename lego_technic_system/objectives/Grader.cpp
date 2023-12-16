@@ -7,7 +7,7 @@
 #include "configure/global_variables.h"
 #include "Grader.h"
 #include "util/Helper.h"
-#include "IO/DataWriter.h"
+#include "io/DataWriter.h"
 
 double Grader::deviation2sketch(BeamLayout& beamLayout){
     int total_dev = 0;

@@ -19,7 +19,7 @@
 #include <dirent.h>
 #include <core/UnitEdge.h>
 #include <ctime>
-#include "IO/DataWriter.h"
+#include "io/DataWriter.h"
 #include "hard_code/BoundingBox.h"
 
 using std::cout;
