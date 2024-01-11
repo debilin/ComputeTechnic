@@ -24,7 +24,7 @@ int main(int argc, char *argv[]) {
         if( strcmp(argv[1], "-path_select") ==0 ){
             glob_vars::current_input = std::stoi(argv[2]);
         }else if( strcmp(argv[1], "-path_provide") == 0){
-            printf("please provide sketth path:\n");
+            printf("please provide sketch path:\n");
             glob_vars::sketch_path = argv[2];
         }else{
             printf("argument error!\n");
