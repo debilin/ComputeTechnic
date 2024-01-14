@@ -23,7 +23,7 @@ You will get an executable `lego_technic_main` inside the `build` folder.
 
 ### Windows
 
-:thinking
+:thinking:
 
 ## Usage
 To use one of the included models run
@@ -74,4 +74,8 @@ To use your own model run
 For example,
 ```
 ./lego_technic_main -path_provide ./my-model-sketch.obj
+```
+To visualize the edges run `lego_vis_edges.py` inside the `python` folder and pass the `unitEdges` file to it. For example,
+```
+python lego_vis_edges.py crossbow_unitEdges_2.txt
 ```
