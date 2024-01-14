@@ -25,7 +25,8 @@ class LEGOGenerator {
 public:
     /******* Initialization ******/
     LEGOGenerator();
-    void chooseModel();//choose which model we want to generate
+    void chooseModel(); //choose which model we want to generate
+    void chosenModel(); //model chosen by the user
 
     /******* Sketch Decomposition ******/
     void extractComponents();

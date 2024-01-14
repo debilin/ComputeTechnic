@@ -18,16 +18,24 @@ using std::cin;
 int main(int argc, char *argv[]) {
 
     if(argc == 1){
-        printf("Please provide sketch path mode!\n");
-        printf("-path_select or -path_provide\n");
+        printf("Please specify sketch path mode!\n");
+        printf("Either -path_select or -path_provide\n");
+        exit(1);
     }else{
-        if( strcmp(argv[1], "-path_select") ==0 ){
-            glob_vars::current_input = std::stoi(argv[2]);
+        if( strcmp(argv[1], "-path_select") == 0 ){
+            if(argc == 3){
+                glob_vars::current_input = std::stoi(argv[2]);
+            }else if(argc == 2){
+                // do nothing
+            }else{
+                printf("Argument error!\n");
+                exit(1);
+            }
         }else if( strcmp(argv[1], "-path_provide") == 0){
-            printf("please provide sketch path:\n");
+            printf("Please provide sketch path:\n");
             glob_vars::sketch_path = argv[2];
         }else{
-            printf("argument error!\n");
+            printf("Argument error!\n");
             exit(1);
         }
     }

@@ -36,20 +36,22 @@ using std::ifstream;
 
 LEGOGenerator::LEGOGenerator()
 {
-    setbuf(stdout, NULL);//to print instantly
-    if(glob_vars::current_input != -1){
-        this->chooseModel();
+    setbuf(stdout, NULL); //to print instantly
+    if(glob_vars::current_input >= 1){
+        this->chosenModel();
         glob_vars::sketch_path = glob_vars::PRE_FIX + glob_vars::current_model.sketch_path;
+        assert( !glob_vars::sketch_path.empty() );
+        printf("Reading sketch %s. \n", glob_vars::sketch_path.c_str());
+        glob_vars::sketchGraph = readSketchFromObjFile(glob_vars::sketch_path);
+
+        srand(glob_vars::current_model.seed_number);
+
+        glob_vars::brickFactory = new BrickFactory();
     } else{
+        this->chooseModel();
         glob_vars::current_model = config::model_names.at(0);
     }
-    assert( !glob_vars::sketch_path.empty() );
-    printf("Reading sketch %s. \n", glob_vars::sketch_path.c_str());
-    glob_vars::sketchGraph = readSketchFromObjFile(glob_vars::sketch_path);
-
-    srand(glob_vars::current_model.seed_number);
-
-    glob_vars::brickFactory = new BrickFactory();
+    
 }
 
 void LEGOGenerator::extractComponents(){
@@ -129,12 +131,15 @@ void LEGOGenerator::stage_two_generation(){
 }
 
 void LEGOGenerator::chooseModel(){
-    printf("Please choose a input:\n");
-    for(int i = 0; i<config::model_names.size(); i++){
+    printf("Please specify a model ID:\n");
+    for(int i = 1; i<config::model_names.size(); i++){
         printf("%d \t %s\n",i,config::model_names.at(i).name.c_str());
     }
+}
+
+void LEGOGenerator::chosenModel(){
     int chosen_id = glob_vars::current_input;
     glob_vars::current_model = config::model_names.at(chosen_id);
-    printf("current model:%s\n", glob_vars::current_model.name.c_str());
+    printf("Current model:%s\n", glob_vars::current_model.name.c_str());
 }
 

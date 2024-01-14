@@ -13,7 +13,6 @@
 
 /********* MACROS For Control *********/
 //#define OUTPUT_ANIMATION
-//#define OUTPUT_ANIMATION
 //#define CROSSBOW_HACKING
 //#define HACKING
 
