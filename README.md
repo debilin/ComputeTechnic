@@ -1,8 +1,29 @@
 ## Building
-Run
+
+### Linux
+Install dependencies (tested on Debian 11)
+```
+apt-get install -y \
+    build-essential \
+    cmake \
+    python3 \
+    googletest \
+    libgtest-dev \
+    libeigen3-dev \
+    libz-dev \
+    python3-matplotlib \
+    python3-numpy
+```
+
+Then run
 ```
 cmake -B build -S . && cmake --build build
 ```
+You will get an executable `lego_technic_main` inside the `build` folder.
+
+### Windows
+
+:thinking
 
 ## Usage
 To use one of the included models run
@@ -11,7 +32,6 @@ To use one of the included models run
 ```
 There are 33 models included with their corresponding ID:
 ```
-0 	 default
 1 	 line
 2 	 cube
 3 	 siggraph
