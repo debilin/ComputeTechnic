@@ -62,6 +62,7 @@ int main(int argc, char *argv[]) {
     generator.computeBeamPlacements();
 
     ////stage two: main generation
+    printf("Second Stage Generation!\n");
     generator.stage_two_generation();
 
     /******* Debugging... Show all uncovered edges *******/

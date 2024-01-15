@@ -9,6 +9,9 @@
 #include "configure/global_variables.h"
 #include "io/DataWriter.h"
 #include "connector/BeamLayoutConnectorGenerator.h"
+#include <chrono>
+#include <ctime>
+#include <iomanip>
 
 using std::cout;
 
@@ -479,6 +482,8 @@ void ConstructionGraph::genComponentCandidates3D_weighted_picking_non_collision_
     clock_t start = clock();
 
     while(T > T_small){
+        auto start = std::chrono::system_clock::now();
+
         if(count % 1000 == 0){
 #ifdef OUTPUT_ANIMATION
             if(T < T_conn_added) {
@@ -542,8 +547,17 @@ void ConstructionGraph::genComponentCandidates3D_weighted_picking_non_collision_
             }
         }
 
-        if(count % 1000 == 0)
-            printf("current score : %lf \t count:%d \t T:%lf \n", curr_score , count++, T);
+        if(count % 1000 == 0){
+            auto finish = std::chrono::system_clock::now();
+            std::chrono::duration<double> elapsed_seconds = finish-start;
+            std::time_t end_time = std::chrono::system_clock::to_time_t(finish);
+ 
+            cout << std::setfill('*') << std::setw(50) << "*" << endl;
+            cout << "Finished: " << std::ctime(&end_time) << std::endl;
+            cout << "Elapsed: " << elapsed_seconds.count() << "s" << std::endl;
+            cout << std::setfill('_') << std::setw(50) << "_" << endl;
+            printf("Current score : %lf \n Count:%d \n T:%lf \n", curr_score , count++, T);
+        }
 
 #ifdef OUTPUT_ANIMATION
 //        if(count % 200 == 0){
